@@ -13,7 +13,28 @@
  *= require_tree .
  *= require_self
  */
- table {
+/* Highlight the sorted column */
+th.sortable.current.asc {
+    background-color: lightgreen;
+    color: black;
+  }
+  
+  th.sortable.current.desc {
+    background-color: lightblue;
+    color: black;
+  }
+  
+  /* Add a small arrow symbol to indicate sorting direction */
+  th.sortable.current.asc:after {
+    content: " ▲"; /* Upward arrow */
+  }
+  
+  th.sortable.current.desc:after {
+    content: " ▼"; /* Downward arrow */
+  }
+  
+  /* Styling for table */
+  table {
     width: 100%;
     border-collapse: collapse;
   }
@@ -26,5 +47,5 @@
   
   th {
     background-color: #f2f2f2;
+    cursor: pointer;
   }
-  
